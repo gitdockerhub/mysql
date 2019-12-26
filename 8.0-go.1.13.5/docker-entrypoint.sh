@@ -2,6 +2,12 @@
 set -eo pipefail
 shopt -s nullglob
 
+#初始化root账户
+MYSQL_ROOT_PASSWORD="123456"
+MYSQL_DATABASE="demo"
+MYSQL_USER="demo"
+MYSQL_PASSWORD="demo"
+
 # logging functions
 mysql_log() {
 	local type="$1"; shift
