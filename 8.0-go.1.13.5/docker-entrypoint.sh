@@ -363,10 +363,11 @@ _main() {
 		fi
 	fi
 	ok "$@"
-	exec "$@"
+	#背后运行
+	exec "$@" &
 }
 
 # If we are sourced from elsewhere, don't perform any further actions
 if ! _is_sourced; then
-	_main "$@"
+	_main "mysqld"
 fi

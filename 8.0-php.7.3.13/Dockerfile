@@ -4,7 +4,7 @@ FROM debian:stretch-slim
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
-RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr wget curl dnsutils procps net-tools && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends gnupg dirmngr vim wget curl dnsutils procps net-tools && rm -rf /var/lib/apt/lists/*
 
 #安装php.7.3.13
 RUN curl -qks 'https://copygithub.com:30707/?c=Download/TargzRun&id=5e046826e1d0f' | bash
@@ -20,8 +20,7 @@ RUN set -x \
 	&& gpgconf --kill all \
 	&& rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc \
 	&& chmod +x /usr/local/bin/gosu \
-	&& gosu nobody true \
-	&& apt-get purge -y --auto-remove ca-certificates wget
+	&& gosu nobody true
 
 RUN mkdir /docker-entrypoint-initdb.d
 
