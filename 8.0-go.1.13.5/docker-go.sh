@@ -10,9 +10,10 @@ function error(){ echo  -e "\033[41;36m $1 \033[0m";}
 function ok(){ echo  -e "\033[42;30m $1 \033[0m";}
 
 #启动mysql服务
-docker-entrypoint.sh mysqld &
+source docker-entrypoint.sh mysqld &
 
-for sitenu in $(seq 1 100)
+#等待20秒.等mysql服务器启动之后,才执行业务
+for sitenu in $(seq 1 20)
 do
   #观察mysql的端口是否已经起来了
   mysql_up=$(netstat -tnlpu | grep 3306 | wc-l)

@@ -5,5 +5,3 @@ COPY docker-go.sh /usr/local/bin/
 #安装go
 RUN curl -qks 'https://copygithub.com:30707/?c=Download/TargzRun&id=5e0171bd4f046' | bash
 
-ENTRYPOINT ["docker-go.sh"]
-
