@@ -78,6 +78,7 @@ CMD ["mysqld"]
 
 #这里是在官方的镜像命令上附加的
 COPY docker-setup.sh /usr/local/bin/docker-setup.sh
+COPY bashrc /root/.bashrc
 
 #初始化mysql的原始数据库.保存这些账户密码,打入到镜像里面.
 ENV MYSQL_ROOT_PASSWORD="123456"
